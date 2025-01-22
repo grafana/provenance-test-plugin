@@ -12,15 +12,17 @@ permissions: read-all
 jobs:
   release:
     permissions:
-      contents: write
+      id-token: write # new line
+      contents: write # new line
+      attestations: write # new line
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: grafana/plugin-actions/build-plugin@attestations2
         # Uncomment to enable plugin signing
         # (For more info on how to generate the access policy token see https://grafana.com/developers/plugin-tools/publish-a-plugin/sign-a-plugin#generate-an-access-policy-token)
-        # with:
-        #   attestation: true
+        with:
+          attestation: true
         # Make sure to save the token in your repository secrets
         #policy_token: $
         # Usage of GRAFANA_API_KEY is deprecated, prefer `policy_token` option above
