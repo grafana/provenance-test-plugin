@@ -16,6 +16,6 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: grafana/plugin-actions/bundle-size@main
+      - uses: grafana/plugin-actions/bundle-size@d03819869ff83790bb6549d1b917cff7bb7278ae # main
